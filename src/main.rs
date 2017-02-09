@@ -4,6 +4,7 @@ extern crate term_painter;
 
 mod display;
 mod log;
+mod letter;
 
 use clap::App;
 use log::*;
@@ -31,8 +32,10 @@ fn main() {
     let letters = match matches.value_of("letters") {
         Some(p) => p,
         _ => {
-            v(format!("Printing letters with options: {:?}", options), &options);
+            v(format!("Found nothing to do with options: {:?}", options), &options);
             return;
         },
     };
+    v(format!("Printing letters with options: {:?}", options), &options);
+    display::letters(letters, &options);
 }

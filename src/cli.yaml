@@ -12,7 +12,7 @@ args:
         short: c
         long: colors
         help: Print colors.
-    - input:
+    - letters:
         help: "String to print"
         required: true
         index: 1
